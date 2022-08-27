@@ -11,6 +11,7 @@
 		CE72F93E28BA4E9B00EC7AC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72F93D28BA4E9B00EC7AC1 /* ContentView.swift */; };
 		CE72F94028BA4E9C00EC7AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE72F93F28BA4E9C00EC7AC1 /* Assets.xcassets */; };
 		CE72F94328BA4E9C00EC7AC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE72F94228BA4E9C00EC7AC1 /* Preview Assets.xcassets */; };
+		CE72F94B28BA522F00EC7AC1 /* MakeNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE72F94928BA522F00EC7AC1 /* MakeNotes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CE72F93D28BA4E9B00EC7AC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE72F93F28BA4E9C00EC7AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE72F94228BA4E9C00EC7AC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE72F94A28BA522F00EC7AC1 /* MakeNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakeNotes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				CE72F93B28BA4E9B00EC7AC1 /* MakeNotesApp.swift */,
 				CE72F93D28BA4E9B00EC7AC1 /* ContentView.swift */,
+				CE72F94928BA522F00EC7AC1 /* MakeNotes.xcdatamodeld */,
 				CE72F93F28BA4E9C00EC7AC1 /* Assets.xcassets */,
 				CE72F94128BA4E9C00EC7AC1 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE72F93E28BA4E9B00EC7AC1 /* ContentView.swift in Sources */,
+				CE72F94B28BA522F00EC7AC1 /* MakeNotes.xcdatamodeld in Sources */,
 				CE72F93C28BA4E9B00EC7AC1 /* MakeNotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +343,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE72F94928BA522F00EC7AC1 /* MakeNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE72F94A28BA522F00EC7AC1 /* MakeNotes.xcdatamodel */,
+			);
+			currentVersion = CE72F94A28BA522F00EC7AC1 /* MakeNotes.xcdatamodel */;
+			path = MakeNotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE72F93028BA4E9B00EC7AC1 /* Project object */;
 }
