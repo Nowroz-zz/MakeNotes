@@ -8,9 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingSheet = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ZStack {
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        AddButton(toggle: $showingSheet)
+                            .padding()
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .background(.indigo)
+                            .clipShape(Circle())
+                            .shadow(radius: 3)
+                    }
+                    .padding(.vertical, 30)
+                    .padding(.horizontal, 10)
+                }
+            }
+            .navigationTitle("MakeNotes")
+            .sheet(isPresented: $showingSheet) {
+                Text("SheetView")
+            }
+        }
     }
 }
 

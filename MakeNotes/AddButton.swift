@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct AddButton: View {
+    @Binding var showingSheet: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            showingSheet = true
+        } label: {
+            Image(systemName: "doc.fill.badge.plus")
+        }
+    }
+    
+    init(toggle showingSheet: Binding<Bool>) {
+        _showingSheet = Binding(projectedValue: showingSheet)
     }
 }
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton()
+        AddButton(toggle: .constant(false))
     }
 }
