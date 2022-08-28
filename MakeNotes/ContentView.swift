@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FetchRequest(sortDescriptors: []) private var notes: FetchedResults<Note>
+    
     @State private var showingSheet = false
     
     var body: some View {
         NavigationView {
             ZStack {
+                List {
+                    Text("\(notes.count)")
+                }
                 VStack {
                     Spacer()
                     
@@ -33,7 +38,7 @@ struct ContentView: View {
             }
             .navigationTitle("MakeNotes")
             .sheet(isPresented: $showingSheet) {
-                Text("SheetView")
+                AddNoteView()
             }
         }
     }
