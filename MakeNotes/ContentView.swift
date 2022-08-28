@@ -18,7 +18,7 @@ struct ContentView: View {
                 List {
                     ForEach(notes, id: \.self) { note in
                         NavigationLink {
-                            Text(note.noteBody)
+                            NoteView(note: note)
                         } label: {
                             HStack {
                                 Text(note.noteTitle)
