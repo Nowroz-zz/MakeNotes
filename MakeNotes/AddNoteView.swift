@@ -48,13 +48,13 @@ struct AddNoteView: View {
             newNote.lastEdited = Date.now
         }
         
-//        if moc.hasChanges {
-//            do {
-//                try moc.save()
-//            } catch {
-//                print("Could not save the note: \(noteTitle)")
-//            }
-//        }
+        if moc.hasChanges {
+            do {
+                try moc.save()
+            } catch {
+                print("Core Data could not save the note: \(noteTitle).")
+            }
+        }
         
         dismiss()
     }

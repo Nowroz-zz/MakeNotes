@@ -68,6 +68,14 @@ struct ContentView: View {
             let note = notes[offset]
             moc.delete(note)
         }
+        
+        if moc.hasChanges {
+            do {
+                try moc.save()
+            } catch {
+                print("Core Data could not save the changes made by delete.")
+            }
+        }
     }
 }
 
