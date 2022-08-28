@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 
 extension Note {
@@ -19,6 +20,18 @@ extension Note {
     @NSManaged public var body: String?
     @NSManaged public var title: String?
     @NSManaged public var lastEdited: Date?
+    
+    public var noteTitle: String {
+        title ?? "Unknown Title"
+    }
+    
+    public var noteBody: LocalizedStringKey {
+        LocalizedStringKey(body ?? "Unknown...")
+    }
+    
+    public var lastEditedDate: Date {
+        lastEdited ?? Date.now
+    }
 
 }
 
