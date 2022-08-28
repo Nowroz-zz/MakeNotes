@@ -17,19 +17,21 @@ struct ContentView: View {
             ZStack {
                 List {
                     ForEach(notes, id: \.self) { note in
-                        NavigationLink {
-                            NoteView(note: note)
-                        } label: {
-                            HStack {
-                                Text(note.noteTitle)
-                                    .font(.headline)
-                                
-                                Spacer()
-                                
-                                Divider()
-                                
-                                Text(note.lastEditedDate.formatted(date: .numeric, time: .omitted))
-                                    .foregroundColor(.secondary)
+                        Section {
+                            NavigationLink {
+                                Text(note.noteBody)
+                            } label: {
+                                HStack {
+                                    Text(note.noteTitle)
+                                        .font(.headline)
+                                    
+                                    Spacer()
+                                    
+                                    Divider()
+                                    
+                                    Text(note.lastEditedDate.formatted(date: .numeric, time: .omitted))
+                                        .foregroundColor(.secondary)
+                                }
                             }
                         }
                     }
