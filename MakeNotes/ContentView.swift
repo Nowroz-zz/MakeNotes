@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    
     @FetchRequest(sortDescriptors: []) private var notes: FetchedResults<Note>
     
     @State private var showingSheet = false
@@ -33,6 +35,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                    .onDelete(perform: deleteNote)
                 }
                 
                 VStack {
@@ -57,6 +60,13 @@ struct ContentView: View {
             .sheet(isPresented: $showingSheet) {
                 AddNoteView()
             }
+        }
+    }
+    
+    func deleteNote(at offsets: IndexSet) {
+        for offset in offsets {
+            let note = notes[offset]
+            moc.delete(note)
         }
     }
 }
