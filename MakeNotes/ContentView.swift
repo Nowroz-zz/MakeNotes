@@ -16,8 +16,27 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 List {
-                    Text("\(notes.count)")
+                    ForEach(notes, id: \.self) { note in
+                        Section {
+                            NavigationLink {
+                                Text(note.noteBody)
+                            } label: {
+                                HStack {
+                                    Text(note.noteTitle)
+                                        .font(.headline)
+                                    
+                                    Spacer()
+                                    
+                                    Divider()
+                                    
+                                    Text(note.lastEditedDate.formatted(date: .numeric, time: .omitted))
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                        }
+                    }
                 }
+                
                 VStack {
                     Spacer()
                     
