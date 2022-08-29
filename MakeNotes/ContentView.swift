@@ -8,34 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var moc
-    
-    @FetchRequest(sortDescriptors: []) private var notes: FetchedResults<Note>
-    
     @State private var showingSheet = false
+    @State private var showingSortingMenu = false
+    @State private var sortDescriptor = [SortDescriptor<Note>]()
     
     var body: some View {
         NavigationView {
             ZStack {
-                List {
-                    ForEach(notes, id: \.self) { note in
-                        NavigationLink {
-                            NoteView(note: note)
-                        } label: {
-                            HStack {
-                                Text(note.noteTitle)
-                                    .font(.headline)
-                                
-                                Spacer()
-                                
-                                Divider()
-                                
-                                Text(note.lastEditedDate.formatted(date: .numeric, time: .omitted))
-                                    .foregroundColor(.secondary)
-                            }
+                SortedListView(sortDescriptors: sortDescriptor) { (note: Note) in
+                    NavigationLink {
+                        NoteView(note: note)
+                    } label: {
+                        HStack {
+                            Text(note.noteTitle)
+                                .font(.headline)
+                            
+                            Spacer()
+                            
+                            Divider()
+                            
+                            Text(note.lastEditedDate.formatted(date: .numeric, time: .omitted))
+                                .foregroundColor(.secondary)
                         }
                     }
-                    .onDelete(perform: deleteNote)
                 }
                 
                 VStack {
@@ -60,20 +55,16 @@ struct ContentView: View {
             .sheet(isPresented: $showingSheet) {
                 AddNoteView()
             }
-        }
-    }
-    
-    func deleteNote(at offsets: IndexSet) {
-        for offset in offsets {
-            let note = notes[offset]
-            moc.delete(note)
-        }
-        
-        if moc.hasChanges {
-            do {
-                try moc.save()
-            } catch {
-                print("Core Data could not save the changes made by delete.")
+            .confirmationDialog("Sort Notes By", isPresented: $showingSortingMenu) {
+                Button("Sort by Title") { sortDescriptor = [SortDescriptor(\.title)] }
+                Button("Sort by Last Modified") { sortDescriptor = [SortDescriptor(\.lastEdited, order: .reverse)] }
+            }
+            .toolbar {
+                Button {
+                    showingSortingMenu = true
+                } label: {
+                    Image(systemName: "arrow.up.arrow.down")
+                }
             }
         }
     }
