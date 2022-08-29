@@ -18,6 +18,7 @@
 		CE72F94E28BA529C00EC7AC1 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72F94C28BA529C00EC7AC1 /* Note+CoreDataClass.swift */; };
 		CE72F94F28BA529C00EC7AC1 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72F94D28BA529C00EC7AC1 /* Note+CoreDataProperties.swift */; };
 		CE72F95128BA69D300EC7AC1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72F95028BA69D300EC7AC1 /* DataController.swift */; };
+		CEAC936928BCBA2A00EB6AB1 /* SortedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC936828BCBA2A00EB6AB1 /* SortedListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		CE72F94C28BA529C00EC7AC1 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE72F94D28BA529C00EC7AC1 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE72F95028BA69D300EC7AC1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		CEAC936828BCBA2A00EB6AB1 /* SortedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				CE72F94D28BA529C00EC7AC1 /* Note+CoreDataProperties.swift */,
 				CE72F93B28BA4E9B00EC7AC1 /* MakeNotesApp.swift */,
 				CE72F93D28BA4E9B00EC7AC1 /* ContentView.swift */,
+				CEAC936828BCBA2A00EB6AB1 /* SortedListView.swift */,
 				CE4F37CE28BBBC7000B0F109 /* NoteView.swift */,
 				CE4F37CC28BB5C2800B0F109 /* AddNoteView.swift */,
 				CE4F37CA28BB504C00B0F109 /* AddButton.swift */,
@@ -165,6 +168,7 @@
 				CE72F94B28BA522F00EC7AC1 /* MakeNotes.xcdatamodeld in Sources */,
 				CE72F93C28BA4E9B00EC7AC1 /* MakeNotesApp.swift in Sources */,
 				CE4F37CD28BB5C2800B0F109 /* AddNoteView.swift in Sources */,
+				CEAC936928BCBA2A00EB6AB1 /* SortedListView.swift in Sources */,
 				CE72F94F28BA529C00EC7AC1 /* Note+CoreDataProperties.swift in Sources */,
 				CE4F37CF28BBBC7000B0F109 /* NoteView.swift in Sources */,
 			);
