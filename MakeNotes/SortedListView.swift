@@ -12,12 +12,20 @@ struct SortedListView<T: NSManagedObject, Content: View>: View {
     @Environment(\.managedObjectContext) var moc
     
     @FetchRequest var results: FetchedResults<T>
+    
+    @State private var searchText = ""
+    
     let content: (T) -> Content
     
     var body: some View {
         List {
             ForEach(results, id:\.self, content: content)
                 .onDelete(perform: deleteResult)
+                
+        }
+        .searchable(text: $searchText)
+        .onChange(of: searchText) { newValue in
+            results.nsPredicate = newValue.isEmpty ? nil : NSPredicate(format: "(title CONTAINS[c] %@) OR (body CONTAINS[c] %@)", newValue, newValue)
         }
     }
     
